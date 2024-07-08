@@ -139,6 +139,7 @@ int main() // Função principal onde todo o código se localiza
         printf("\t1 - Registrar nomes\n");
         printf("\t2 - Consultar nomes\n");
         printf("\t3 - Deletar usuário\n");
+        printf("\t4 - sair do sistema\n");
         printf("\n Opção: ");
         
         // Leitura da opção do usuário
@@ -160,6 +161,11 @@ int main() // Função principal onde todo o código se localiza
             case 3:
                 deletar();
                 break;
+                
+            case 4:
+		        printf("obrigado por ultilizar o sistema!\n");
+				return 0;
+				break;      
                 
             default: 
                 printf("\t* Opção inválida.\n\n\n");
