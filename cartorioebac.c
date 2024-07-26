@@ -12,6 +12,7 @@ int registro()
     char nome [40];
     char sobrenome [40];
 	char cargo [40];
+    char resp;
     
     //coletando informação do cpf
     printf("digite o cpf a ser cadastrado: ");
@@ -58,7 +59,33 @@ int registro()
     fprintf (file, cargo);
     fclose (file);
     
-    system("pause");    
+    printf ("Deseja adicionar mais usuários? [S/N] "); 
+	scanf (" %c", &resp); 
+	resp = toupper(resp); //Formatando a resposta para letra maiúscula
+	
+	if (resp == 'S') //Estrutura de condição caso "S"
+	{
+		system ("cls"); 
+		registro(); //Retornar a função REGISTRO
+	} 
+	
+	if (resp == 'N') //Estrutura de condição caso "N"													
+	{																			
+		system ("cls"); //LimpaTela
+		printf ("Retornando ao menu...\n\n"); //Escrevendo na tela	
+		system ("pause"); 
+		main(); //Retornando função PRINCIPAL
+	} 
+	
+	if (resp != 'S' && resp != 'N') //Estrutura de condição caso a resposta seja diferente de "S" e de "N"										
+	{
+		system ("cls"); 
+		printf ("Comando não reconhecido!\n");
+		printf ("Retornando ao menu...\n\n"); 
+		system ("pause"); 
+		main(); 
+	} 
+	
 }
 
 // Função para consultar nomes
