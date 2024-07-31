@@ -150,56 +150,82 @@ int main() // Função principal onde todo o código se localiza
 
     // Configura a localidade para Português
     setlocale(LC_ALL, "portuguese");
-
-    // Loop principal do programa
-    while (x == 1) 
+    
+    char senha [10]="a";
+    int comparacao;
+	
+	printf("### Cartório EBAC ###\n\n");
+	printf("login administrador!\n\n digite sua senha:");
+	scanf("%s", senha);
+	
+	comparacao = strcmp(senha, "admin");
+	
+	if(comparacao == 0)
 	{
-        system("cls"); // Limpa a tela
-        
-        // Título
-        printf("### Cartório EBAC ###\n\n");
-        
-        // Tela de seleção
-        printf("- Selecione a opção desejada:\n\n");
-        
-        // Opções
-        printf("\t1 - Registrar nomes\n");
-        printf("\t2 - Consultar nomes\n");
-        printf("\t3 - Deletar usuário\n");
-        printf("\t4 - sair do sistema\n");
-        printf("\n Opção: ");
-        
-        // Leitura da opção do usuário
-        scanf("%d", &opcao);
+	
 
-        system("cls"); // Limpa a tela
+     // Loop principal do programa
+     while (x == 1) 
+	 {
+         system("cls"); // Limpa a tela
         
-        // chamada das funçoes
-        switch (opcao) 
-		{
-            case 1:
-                registro();
-                break;  
-                
-            case 2:
-                consulta();
-                break;
-                
-            case 3:
-                deletar();
-                break;
-                
-            case 4:
-		        printf("obrigado por ultilizar o sistema!\n");
-				return 0;
-				break;      
-                
-            default: 
-                printf("\t* Opção inválida.\n\n\n");
-                system("pause");
-                break;
-        }       
-    }
+         // Título
+         printf("### Cartório EBAC ###\n\n");
+        
+         // Tela de seleção
+         printf("- Selecione a opção desejada:\n\n");
+        
+         // Opções
+         printf("\t1 - Registrar nomes\n");
+         printf("\t2 - Consultar nomes\n");
+         printf("\t3 - Deletar usuário\n");
+         printf("\t4 - sair do sistema\n");
+         printf("\n Opção: ");
+        
+         // Leitura da opção do usuário
+         scanf("%d", &opcao);
 
-}
+         system("cls"); // Limpa a tela
+        
+         // chamada das funçoes
+         switch (opcao) 
+		 {
+             case 1:
+                 registro();
+                 break;  
+                
+             case 2:
+                 consulta();
+                 break;
+                
+             case 3:
+                 deletar();
+                 break;
+                
+             case 4:
+		         printf("obrigado por ultilizar o sistema!\n");
+			 	return 0;
+			 	break;      
+                
+             default: 
+                 printf("\t* Opção inválida.\n\n\n");
+                 system("pause");
+                 break;
+	      }       
+	    
+	  }
+	 
+	}
+
+   else
+   printf("\n\nsenha incorreta!");
+  
+  
+  
+  }            
+  
+  
+    
+
+ 
 
