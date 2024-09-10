@@ -13,6 +13,7 @@ int registro()
     char sobrenome [40];
 	char cargo [40];
     char resp;
+    char consulta [40];
     
     //coletando informação do cpf
     printf("digite o cpf a ser cadastrado: ");
@@ -24,6 +25,7 @@ int registro()
     FILE *file;
     file = fopen(arquivo, "w");
     fprintf(file,cpf);
+    
     fclose(file);
     
     file = fopen(arquivo, "a");
@@ -93,6 +95,8 @@ int consulta()
 {
 	setlocale(LC_ALL, "portuguese");
 	
+	system ("cls");
+	
 	//criação/leitura do arquivo do usuario
     char cpf[40];
     char conteudo[200];
@@ -106,13 +110,15 @@ int consulta()
    
 	if (file == NULL)
    {
-    printf("não foi possivel localizar o usuario: \n");	
+    printf("não foi possivel localizar o usuario: \n");
+	system ("pause");
+	main();			
    } 
     
     
     while(fgets(conteudo, 200, file) != NULL);
-    {
-    	printf("essas são as informaçoés do usuario: \n");
+    {		
+		printf("essas são as informaçoés do usuario: \n");
     	printf("%s", conteudo);
     	printf("\n\n");
 	}
@@ -123,7 +129,7 @@ int consulta()
 // Função para deletar usuários
 int deletar() 
 {
-   //criação/leitura do arquivo do usuario
+   //criação/leitura do arquivo do usuarioa
 	
    char cpf[40];
    
@@ -145,7 +151,9 @@ int deletar()
 
 int main() // Função principal onde todo o código se localiza
 {
-    int opcao = 0;
+    system ("cls");
+	
+	int opcao = 0;
     int x = 1;
 
     // Configura a localidade para Português
@@ -158,7 +166,7 @@ int main() // Função principal onde todo o código se localiza
 	printf("login administrador!\n\n digite sua senha:");
 	scanf("%s", senha);
 	
-	comparacao = strcmp(senha, "admin");
+	comparacao = strcmp(senha, "gus");
 	
 	if(comparacao == 0)
 	{
